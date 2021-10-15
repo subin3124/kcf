@@ -26,12 +26,16 @@ public class RegisterController {
 
     @PostMapping("/")
     private int Register(@RequestParam String owner,@RequestParam String name, @RequestParam String region, 
-@RequestParam String ownername,@RequestParam String info,@RequestParam String positionX, @RequestParam String positionY, @RequestParam List<MultipartFile> images) throws Exception {
-       
+@RequestParam String ownername,@RequestParam String info,@RequestParam String positionX, @RequestParam String positionY, @RequestParam String category,@RequestParam boolean filter1,@RequestParam boolean filter2,@RequestParam boolean filter3, @RequestParam List<MultipartFile> images) throws Exception {
+      
      
         CompanyDTO company = new CompanyDTO();
         company.setOwner(owner);
         company.setInfo(info);
+        company.setCategory(category);
+        company.setFilter1((filter1)?1:0);
+        company.setFilter2((filter2)?1:0);
+        company.setFilter3((filter3)?1:0);
         company.setName(name);
         company.setOwnername(ownername);
         company.setRegion(region);

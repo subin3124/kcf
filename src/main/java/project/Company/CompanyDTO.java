@@ -27,6 +27,7 @@ public class CompanyDTO {
     @Column(name = "cp_region")
     private String region;
     
+    
     @Column(name = "cp_owner_name")
     private String ownername;
     
@@ -38,6 +39,18 @@ public class CompanyDTO {
     
     @Column(name = "cp_positionY")
     private float positionY;
+    
+    @Column(name = "category")
+    private String category;
+    
+    @Column(name = "filter1")
+    private int filter1;
+    
+    @Column(name = "filter2")
+    private int filter2;
+    
+    @Column(name = "filter3")
+    private int filter3;
     
 
     /**
@@ -143,5 +156,53 @@ public String getInfo() {
  */
 public void setId(long id) {
 	this.id = id;
+}
+    /**
+ * @return the category
+ */
+public String getCategory() {
+	return category;
+}
+    /**
+ * @param filter3 the filter3 to set
+ */
+public void setFilter3(int filter3) {
+	this.filter3 = filter3;
+}
+    /**
+ * @return the filter3
+ */
+public int isFilter3() {
+	return filter3;
+}
+    /**
+ * @param filter2 the filter2 to set
+ */
+public void setFilter2(int filter2) {
+	this.filter2 = filter2;
+}
+    /**
+ * @return the filter2
+ */
+public int isFilter2() {
+	return filter2;
+}
+    /**
+ * @param filter1 the filter1 to set
+ */
+public void setFilter1(int filter1) {
+	this.filter1 = filter1;
+}
+    /**
+ * @return the filter1
+ */
+public int isFilter1() {
+	return filter1;
+}
+    /**
+ * @param category the category to set
+ */
+public void setCategory(String category) {
+	this.category = category;
 }
 }

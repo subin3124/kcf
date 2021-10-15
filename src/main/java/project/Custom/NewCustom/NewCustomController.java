@@ -19,11 +19,11 @@ public class NewCustomController {
     NewCustomService newCustomService;
     
     @PostMapping("/")
-    private int NewCustom(@RequestParam long company, @RequestParam String name, @RequestParam String kinds, @RequestParam String userfk, @RequestParam long orderfk, @RequestParam String customImage, @RequestParam List<MultipartFile> images){
+    private int NewCustom(@RequestParam String company, @RequestParam String name, @RequestParam String kinds, @RequestParam String userfk, @RequestParam long orderfk, @RequestParam String customImage, @RequestParam List<MultipartFile> images){
     CustomDTO customDto = new CustomDTO();
         customDto.setName(name);
         customDto.setImage(customImage);
-        customDto.setCompanyfk(company);
+        customDto.setCompanyfk(Long.parseLong(company));
         customDto.setKinds(kinds);
         customDto.setOrderfk(orderfk);
         customDto.setUserfk(userfk);

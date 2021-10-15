@@ -1,6 +1,7 @@
 project/Application.class
 project/Company/CompanyDTO.class
 project/Image/ImageDTO.class
+project/Custom/ViewCustomDetails/ViewCustomDetailsController.class
 project/User/Login/LoginDAO.class
 project/User/Login/LoginController.class
 project/Order/ViewOrders/ViewOrdersService.class

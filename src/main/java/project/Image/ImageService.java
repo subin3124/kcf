@@ -31,8 +31,8 @@ public class ImageService {
         } return urls;
          }
         
-    public List<String> GetImagesByCustomId(CustomDTO custom) throws IOException{
-        List<ImageDTO> imageDTOs = imageDAO.findImageDTOsByCustomAndType(custom.getImage(),1); //타입 : 회사는 0, 커스텀은 1
+    public List<String> GetImagesByCustomId(String image) throws IOException{
+        List<ImageDTO> imageDTOs = imageDAO.findImageDTOsByCustomAndType(image,1); //타입 : 회사는 0, 커스텀은 1
         List<String> urls = new ArrayList<>();
         for(ImageDTO imageDTO : imageDTOs){
             urls.add(imageDTO.getSrc());

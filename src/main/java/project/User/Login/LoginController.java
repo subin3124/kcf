@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController()
@@ -16,10 +17,8 @@ public class LoginController {
     LoginService loginService;
     
     @PostMapping("/")
-    private int loginMapping(@RequestBody String json) throws Exception{
-        JSONParser jsonParser = new JSONParser();
-        JSONObject JSONObject = (JSONObject) jsonParser.parse(json);
-        return loginService.Login(JSONObject.get("id").toString(),JSONObject.get("pw").toString());
+    private int loginMapping(@RequestParam String Id,@RequestParam String Pw) throws Exception{
+        return loginService.Login(Id,Pw);
         
     }
 }

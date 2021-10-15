@@ -22,4 +22,14 @@ public class ViewListController {
         return viewListService.CompanyListsByRegion(Region);
     }
     
+    @GetMapping("/NameWithFilterAndRegionskinds")
+    private List<CompanyDTO> GetCompaniesByFileterAndName(@RequestParam String Name, @RequestParam String Filter1, @RequestParam String Filter2,@RequestParam String Filter3, @RequestParam String Region, @RequestParam String Kinds){
+       
+        System.out.println("value test : "+Filter1);
+        return viewListService.CompanyListsWithFilteringAndName(Name, Boolean.parseBoolean(Filter1),                       Boolean.parseBoolean(Filter2),
+        Boolean.parseBoolean(Filter3),
+        Region,
+        Kinds);
+    }
+    
 }
