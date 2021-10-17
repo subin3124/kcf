@@ -51,7 +51,12 @@ public class CompanyDTO {
     
     @Column(name = "filter3")
     private int filter3;
-    
+
+    @Column(name = "image_greencustom")
+    private String imggc;
+
+    @Column(name = "greenpara")
+    private String greenpara;
 
     /**
  * @return the id

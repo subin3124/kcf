@@ -24,8 +24,8 @@ public class ImageDTO {
     
     @Column(name = "type")
     private int type;
-    @Column(name = "image_custom_fk")
-    private String custom;
+    @Column(name = "image_Sche_fk")
+    private String Sche;
     /**
  * @param src the src to set
  */
@@ -77,13 +77,11 @@ public int getType() {
     /**
  * @param custom the custom to set
  */
-public void setCustom(String custom) {
-	this.custom = custom;
-}
-    /**
- * @return the custom
- */
-public String getCustom() {
-	return custom;
-}
+    public String getSche() {
+        return Sche;
+    }
+
+    public void setSche(String sche) {
+        Sche = sche;
+    }
 }

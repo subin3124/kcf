@@ -34,7 +34,12 @@ public class OrderDTO {
     
     @Column(name = "order_timestamp")
     private Timestamp timestamp;
-    
+
+    @Column(name = "order_status")
+    private String orderStatus;
+    @Column(name = "greenpara_result")
+    private String greenresult;
+
     /**
  * @param userfk the userfk to set
  */
@@ -119,5 +124,20 @@ public void setCompanyfk(long companyfk) {
 public long getCompanyfk() {
 	return companyfk;
 }
-    
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public String getGreenresult() {
+        return greenresult;
+    }
+
+    public void setGreenresult(String greenresult) {
+        this.greenresult = greenresult;
+    }
 }

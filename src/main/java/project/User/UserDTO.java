@@ -37,6 +37,9 @@ public class UserDTO {
     
     @Column(name = "username")
     private String username;
+
+    @Column(name = "greenpara")
+    private int greenpara;
     /**
  * @return the id
  */
@@ -109,4 +112,12 @@ public void setEmail(String email) {
 public String getEmail() {
 	return email;
 }
+
+    public int getGreenpara() {
+        return greenpara;
+    }
+
+    public void setGreenpara(int greenpara) {
+        this.greenpara = greenpara;
+    }
 }

@@ -22,6 +22,9 @@ public class ImageService {
     ImageDAO imageDAO;
     private static final String FILE_SERVER_PATH = "/workspace/kcf/serverImage";
     
+
+        
+
     public List<String> GetImagesByCompanyId(CompanyDTO company) throws IOException{
         List<ImageDTO> imageDTOs = imageDAO.findImageDTOsByCompanyAndType(company.getName(),0); //타입 : 회사는 0, 커스텀은 1
         List<String> urls = new ArrayList<>();
@@ -29,15 +32,7 @@ public class ImageService {
             System.out.println(imageDTO.getCompany()+" : "+imageDTO.getSrc());
             urls.add(imageDTO.getSrc());
         } return urls;
-         }
-        
-    public List<String> GetImagesByCustomId(String image) throws IOException{
-        List<ImageDTO> imageDTOs = imageDAO.findImageDTOsByCustomAndType(image,1); //타입 : 회사는 0, 커스텀은 1
-        List<String> urls = new ArrayList<>();
-        for(ImageDTO imageDTO : imageDTOs){
-            urls.add(imageDTO.getSrc());
-        } return urls;
-         }
+    }
     
     public byte[] ReturnImage(String imageurl) throws Exception{
               InputStream in = new FileInputStream(imageurl);
@@ -65,11 +60,18 @@ public class ImageService {
             LocalDateTime localDateTime = LocalDateTime.now();
             image.transferTo(new File(FILE_SERVER_PATH+"/image_"+custom.getImage()+"_"+localDateTime.toString()+"_"+increase+".png"));
             ImageDTO imageDTO = new ImageDTO();
-            imageDTO.setCustom(custom.getImage());
+            imageDTO.setSche(custom.getImage());
             imageDTO.setSrc(FILE_SERVER_PATH+"/image_"+custom.getImage()+"_"+localDateTime.toString()+"_"+increase+".png");
             imageDTO.setType(1); //회사는 0, 커스텀은 1
             imageDAO.save(imageDTO);
             increase++;
         }
+    }
+    public List<String> GetImagesByCustomId(String image) throws IOException{
+        List<ImageDTO> imageDTOs = imageDAO.findImageDTOsByCustomAndType(image,1); //타입 : 회사는 0, 커스텀은 1
+        List<String> urls = new ArrayList<>();
+        for(ImageDTO imageDTO : imageDTOs){
+            urls.add(imageDTO.getSrc());
+        } return urls;
     }
 }

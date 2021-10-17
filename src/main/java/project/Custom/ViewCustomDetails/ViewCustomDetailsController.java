@@ -14,7 +14,7 @@ import project.Custom.CustomDTO;
 import project.Image.ImageService;
 
 @RestController
-@RequestMapping("/Custom/View")
+@RequestMapping("/xxxxxxxxxx/View")
 public class ViewCustomDetailsController {
     
     @Autowired

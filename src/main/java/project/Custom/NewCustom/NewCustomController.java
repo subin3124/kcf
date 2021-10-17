@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import project.Custom.CustomDTO;
 
 @RestController
-@RequestMapping("/Custom/New")
+@RequestMapping("/xxxx/New")
 public class NewCustomController {
 
     @Autowired
