@@ -11,7 +11,7 @@ import project.Customs.Sche.ScheDTO;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Custom/New")
+@RequestMapping("/Custom/Sche/New")
 public class CustomScheNewController {
 
     @Autowired
