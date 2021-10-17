@@ -21,14 +21,15 @@ public class CustomScheNewController {
     private void NewCustom(@RequestParam long companyid, @RequestParam int greencompare, @RequestParam int greenpara, @RequestParam String image, @RequestParam long orderid, @RequestParam float height, @RequestParam float weight, @RequestParam String name, @RequestParam List<MultipartFile> files){
 
         ScheDTO scheDTO = new ScheDTO();
-        scheDTO.setCompany();
-        scheDTO.setGreencompare();
-        scheDTO.setGreenpara();
-        scheDTO.setImage();
-        scheDTO.setOrderid();
-        scheDTO.setHeight();
-        scheDTO.setWidth();
-        scheDTO.setName();
+        scheDTO.setCompany(companyid);
+        scheDTO.setGreencompare(greencompare);
+        scheDTO.setGreenpara(greenpara);
+        scheDTO.setImage(image);
+        scheDTO.setOrderid(orderid);
+        scheDTO.setHeight(height);
+        scheDTO.setWidth(weight);
+        scheDTO.setName(name);
+        customScheNewService.NewSche(scheDTO);
     }
 
 }
